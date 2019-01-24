@@ -1,8 +1,7 @@
 import random
 
 class react_player:
-    """a player that blocks opponent's 3 in a row or takes
-    3 in a row if it can, otherwise makes a random move"""
+    """a player that blocks opponent's 3 in a row or takes 3 in a row if it can, otherwise makes a random move"""
     
     name = "react"
 
