@@ -1,4 +1,19 @@
+WIN_REWARD  =  1
+LOSE_REWARD = -1
+TIE_REWARD  =  0
+
 class game:
+
+    # winning combinations
+    win_comb = [((0, 0), (0, 1), (0, 2)),
+                ((1, 0), (1, 1), (1, 2)),
+                ((2, 0), (2, 1), (2, 2)),
+                ((0, 0), (1, 0), (2, 0)),
+                ((0, 1), (1, 1), (2, 1)),
+                ((0, 2), (1, 2), (2, 2)),
+                ((0, 0), (1, 1), (2, 2)),
+                ((0, 2), (1, 1), (2 ,0))]
+    
     
     def __init__(self):
         """creates an empty game board"""
@@ -16,16 +31,8 @@ class game:
     
     
     def check_win(self):
-        win_comb = [((0, 0), (0, 1), (0, 2)),
-                    ((1, 0), (1, 1), (1, 2)),
-                    ((2, 0), (2, 1), (2, 2)),
-                    ((0, 0), (1, 0), (2, 0)),
-                    ((0, 1), (1, 1), (2, 1)),
-                    ((0, 2), (1, 2), (2, 2)),
-                    ((0, 0), (1, 1), (2, 2)),
-                    ((0, 2), (1, 1), (2 ,0))]
         for player in ['x', 'o']:
-            for c in win_comb:
+            for c in self.win_comb:
                 if self.board[c[0][0]][c[0][1]] == player and \
                    self.board[c[1][0]][c[1][1]] == player and \
                    self.board[c[2][0]][c[2][1]] == player:

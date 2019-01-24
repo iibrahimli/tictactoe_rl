@@ -1,15 +1,17 @@
-from players.random_player import random_player
+from ttt import game
+from players.user_player import *
+from players.random_player import *
+from players.react_player import *
+from players.q_player import *
+from players.deep_q_player import *
+from players.pg_player import *
+from players.ppo_player import *
 from util import versus
 
 
-WIN_REWARD  =  1
-LOSE_REWARD = -1
-TIE_REWARD  =  0
-
-
 player1 = random_player()
-player2 = random_player()
+player2 = react_player()
 
-res = versus(player1, player2)
+res = versus(player2, player1, 1000)
 
 print(res)
