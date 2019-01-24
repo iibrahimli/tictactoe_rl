@@ -8,5 +8,5 @@ class random_player:
     def move(self, game):
         # print("chose", random.choice(game.get_actions()))
         if len(game.get_actions()) == 0:
-            return (0, 0)
+            return
         game.put(*random.choice(game.get_actions()))
