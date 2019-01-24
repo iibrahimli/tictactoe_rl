@@ -9,9 +9,9 @@ from players.ppo_player import *
 from util import versus
 
 
-player1 = random_player()
-player2 = react_player()
+player1 = react_player()
+player2 = random_player()
 
-res = versus(player2, player1, 1000)
+res = versus(player1, player2, 1000)
 
 print(res)
