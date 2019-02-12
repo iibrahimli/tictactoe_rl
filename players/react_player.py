@@ -27,7 +27,7 @@ class react_player:
     
 
     def move(self, game):
-        if len(game.get_actions()) == 0:
+        if len(game.get_moves()) == 0:
             return
         move = self.block_three(game)
         if move:
@@ -37,4 +37,4 @@ class react_player:
         if move:
             game.put(*move)
             return
-        game.put(*random.choice(game.get_actions()))
+        game.put(*random.choice(game.get_moves()))
